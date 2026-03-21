@@ -1,0 +1,72 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Fundo */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+/* Cabeçalho */
+header {
+    background-color: #7d0606;
+    padding: 20px;
+    position: relative;
+}
+
+/* Logo esquerda */
+.logo {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    color: white;
+}
+
+/* Menu centralizado */
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 30px;
+}
+
+/* Links */
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    background-color: #e74c3c;
+    padding: 12px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+/* Hover */
+nav ul li a:hover {
+    background-color: #922b21;
+}
+
+/* Banner */
+.banner {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: #ddd;
+}
+
+/* Seção tópicos */
+.topicos {
+    padding: 30px;
+}
+
+/* Cards */
+.card {
+    background-color: white;
+    padding: 20px;
+    margin-top: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 5px rgba(0,0,0,0.1);
+}

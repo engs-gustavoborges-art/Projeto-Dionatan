@@ -8,7 +8,7 @@ body {
   justify-content: center;
   align-items: center;
 
-  background: linear-gradient(135deg, #1e3c72, #2a5298);
+  background: linear-gradient(135deg, #ea4c4c, #7d0606);
 }
 
 body::before {
@@ -16,15 +16,14 @@ body::before {
   position: absolute;
   inset: 0;
 
-  background-image: url('../img/logo.png');
+  background-image: url('../Img/logo-transparent.png');
   background-repeat: repeat;
-  background-size: 100px;
+  background-size: 220px;
 
-  opacity: 0.06; 
+  opacity: 0.40; 
   z-index: 0;
 }
 
-/* 📦 CARD */
 .container {
   position: relative;
   z-index: 1;
@@ -35,6 +34,7 @@ body::before {
   padding: 40px;
   border-radius: 12px;
   width: 320px;
+  border: 1px solid black;
 
   backdrop-filter: blur(5px);
   animation: aparecer 0.8s ease;
@@ -50,8 +50,8 @@ body::before {
   padding: 12px;
   margin: 10px 0;
 
-  border: 1px solid #ccc;
-  border-radius: 6px;
+  border: 1px solid #000000;
+  border-radius: 10px;
   outline: none;
 
   transition: 0.3s;
@@ -61,15 +61,14 @@ body::before {
   border-color: #2a5298;
 }
 
-/* 🔘 BOTÃO */
 .form button {
   width: 100%;
   padding: 12px;
   margin-top: 10px;
 
-  border: none;
+  border: 1px solid black;
   border-radius: 6px;
-  background: #2a5298;
+  background: linear-gradient(135deg, #ea4c4c, #7d0606);
   color: white;
 
   cursor: pointer;
@@ -77,7 +76,7 @@ body::before {
 }
 
 .form button:hover {
-  background: #1e3c72;
+  background: #D4AF37;
   transform: scale(1.03);
 }
 
@@ -87,11 +86,10 @@ body::before {
 }
 
 .form a {
-  color: #2a5298;
+  color:#2a5298;
   text-decoration: none;
 }
 
-/* ✨ ANIMAÇÃO */
 @keyframes aparecer {
   from {
     opacity: 0;
@@ -103,7 +101,7 @@ body::before {
   }
 }
 
-/* 📱 RESPONSIVO */
+/* responsividade*/
 @media (max-width: 500px) {
   .form {
     width: 90%;

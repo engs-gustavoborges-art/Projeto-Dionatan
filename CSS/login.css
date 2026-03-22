@@ -17,9 +17,9 @@ body::before {
 
   background-image: url('../Img/logo-transparent.png');
   background-repeat: repeat;
-  background-size: 200px;
+  background-size: 220px;
 
-  opacity: 0.60; 
+  opacity: 0.40; 
   z-index: 0;
 }
 
@@ -58,7 +58,7 @@ body::before {
 }
 
 .form button:hover {
-  background: #b9a63e;
+  background: #D4AF37
 }
 
 @keyframes aparecer {

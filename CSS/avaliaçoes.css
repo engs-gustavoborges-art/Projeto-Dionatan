@@ -1,0 +1,39 @@
+/* Título */
+.titulo {
+    text-align: center;
+    margin: 30px 0;
+}
+
+/* Seção geral */
+.avaliacoes {
+    padding: 20px;
+}
+
+/* Categoria */
+.categoria {
+    margin-bottom: 40px;
+}
+
+/* Título da categoria */
+.categoria h2 {
+    color: #c0392b;
+    margin-bottom: 15px;
+}
+
+/* Cards */
+.card {
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    width: 250px;
+    box-shadow: 0px 2px 8px rgba(0,0,0,0.1);
+    display: inline-block;
+    margin-right: 10px;
+    transition: 0.3s;
+}
+
+/* Hover */
+.card:hover {
+    transform: scale(1.05);
+}

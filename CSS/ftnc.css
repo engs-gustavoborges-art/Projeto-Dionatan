@@ -1,0 +1,50 @@
+.container {
+  padding: 20px;
+  font-family: Arial;
+}
+
+.filtros {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.filtros input,
+.filtros select {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.filtros button {
+  background: red;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.lista {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.card {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.imagem {
+  width: 150px;
+  height: 100px;
+  background: #ccc;
+  border-radius: 5px;
+}
+
+.info h3 {
+  margin: 0;
+}

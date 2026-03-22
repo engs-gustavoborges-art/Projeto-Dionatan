@@ -1,0 +1,67 @@
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(135deg, #ea4c4c, #7d0606);
+  height: 100vh;
+  display: flex;
+  height: 100vh;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background-image: url('../Img/logo-transparent.png');
+  background-repeat: repeat;
+  background-size: 220px;
+
+  opacity: 0.40; 
+  z-index: 0;
+}
+
+.container {
+  background: white;
+  padding: 40px;
+  border: 1px solid black;
+  border-radius: 10px;
+  width: 300px;
+  position: relative;
+  z-index: 1;
+  animation: aparecer 1s;
+}
+
+.form h2 {
+  text-align: center;
+}
+
+.form input {
+  width: 100%;
+  padding: 5px;
+  margin: 10px 0;
+  border-radius: 10px;
+}
+
+.form button {
+  width: 50%;
+  padding: 10px;
+  background:linear-gradient(135deg, #ea4c4c, #7d0606);
+  color: white;
+  border: 1px solid black;
+  border-radius: 5px;
+  margin-left: 80px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.form button:hover {
+  background: #D4AF37
+}
+
+@keyframes aparecer {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}

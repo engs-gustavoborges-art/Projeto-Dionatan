@@ -1,0 +1,109 @@
+body {
+  margin: 0;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: linear-gradient(135deg, #ea4c4c, #7d0606);
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background-image: url('../Img/logo-transparent.png');
+  background-repeat: repeat;
+  background-size: 220px;
+
+  opacity: 0.40; 
+  z-index: 0;
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+}
+
+.form {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 40px;
+  border-radius: 12px;
+  width: 320px;
+  border: 1px solid black;
+
+  backdrop-filter: blur(5px);
+  animation: aparecer 0.8s ease;
+}
+
+.form h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.form input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+
+  border: 1px solid #000000;
+  border-radius: 10px;
+  outline: none;
+
+  transition: 0.3s;
+}
+
+.form input:focus {
+  border-color: #2a5298;
+}
+
+.form button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+
+  border: 1px solid black;
+  border-radius: 6px;
+  background: linear-gradient(135deg, #ea4c4c, #7d0606);
+  color: white;
+
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.form button:hover {
+  background: #D4AF37;
+  transform: scale(1.03);
+}
+
+.form p {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.form a {
+  color:#2a5298;
+  text-decoration: none;
+}
+
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* responsividade*/
+@media (max-width: 500px) {
+  .form {
+    width: 90%;
+  }
+}

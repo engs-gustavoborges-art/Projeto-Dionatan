@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="CSS/ftnc.css">
 </head>
 
+<body>
+
 <header>
     <img src="Img/logo-transparent.png" alt="Logo site" class="logo">
 
@@ -20,110 +22,95 @@
     </nav>
 </header>
 
-    /*JAVASCRIPT*/
+<div class="container">
+    <div class="filtros">
+        <input id="busca" type="text" placeholder="Digite o carro aqui..."/>
 
+        <select id="ano">
+            <option value="">Todos os anos</option>
+            <option value="2010">2010</option>
+            <option value="2011">2011</option>
+            <option value="2012">2012</option>
+            <option value="2013">2013</option>
+            <option value="2014">2014</option>
+            <option value="2015">2015</option>
+            <option value="2016">2016</option>
+            <option value="2017">2017</option>
+            <option value="2018">2018</option>
+            <option value="2019">2019</option>
+            <option value="2020">2020</option>
+            <option value="2021">2021</option>
+            <option value="2022">2022</option>
+            <option value="2023">2023</option>
+            <option value="2024">2024</option>
+            <option value="2025">2025</option>
+        </select>
+
+        <select id="combustivel">
+            <option value="">Combustivel</option>
+            <option value="gasolina">Gasolina</option>
+            <option value="flex">Flex</option>
+        </select>
+
+        <select id="cambio">
+            <option value="">Câmbio</option>
+            <option value="automatico">Automático</option>
+            <option value="manual">Manual</option>
+        </select>
+
+        <button id="btnBuscar">Pesquisar</button>
+    </div>
+
+    <div class="lista"></div>
+</div>
+
+<!-- JAVASCRIPT -->
 <script>
-    const carros = [
-        {nome: "Volkswagen Gol 1.0", ano: "2014", combustivel: "flex", cambio: "manual"},
-        {nome: "Fiat Uno 1.0", ano: "2012", combustivel: "gasolina", cambio: "manual"},
-        {nome: "Chevrolet Corsa Premium 1.4", ano: "2010", combustivel: "flex", cambio: "manual"},
-        {nome: "Volkswagen Jetta GLI 2.0", ano: "2023", combustivel: "gasolina", cambio: "automatico"},
-    ];
-</script>
+const carros = [
+    {nome: "Volkswagen Gol 1.0", ano: "2014", combustivel: "flex", cambio: "manual"},
+    {nome: "Fiat Uno 1.0", ano: "2012", combustivel: "gasolina", cambio: "manual"},
+    {nome: "Chevrolet Corsa Premium 1.4", ano: "2010", combustivel: "flex", cambio: "manual"},
+    {nome: "Volkswagen Jetta GLI 2.0", ano: "2023", combustivel: "gasolina", cambio: "automatico"},
+];
 
-<script>
-    const lista = document.querySelector(".lista");
+const lista = document.querySelector(".lista");
 
-    function mostrarCarros(listaCarros){
-        lista.innerHTML = "";
+function mostrarCarros(listaCarros){
+    lista.innerHTML = "";
 
-        listaCarros.forEach(carro =>{
-            lista.innerHTML += `
-              <div class = "card">
-                <div class = "imagem"></div>
-                <div class = "info">
-                    <h3>${carro.nome}</h3>
-                    <p>${carro.ano} • ${carro.combustivel} • ${carro.cambio}</p>
-                    </div>
-                </div>
-               `; 
-        });
-    }
-</script>
+    listaCarros.forEach(carro =>{
+        lista.innerHTML += `
+        <div class="card">
+            <div class="imagem"></div>
+            <div class="info">
+                <h3>${carro.nome}</h3>
+                <p>${carro.ano} • ${carro.combustivel} • ${carro.cambio}</p>
+            </div>
+        </div>
+        `;
+    });
+}
 
-<script>
 document.getElementById("btnBuscar").addEventListener("click", () => {
-  const busca = document.getElementById("busca").value.toLowerCase();
-  const ano = document.getElementById("ano").value;
-  const combustivel = document.getElementById("combustivel").value;
-  const cambio = document.getElementById("cambio").value;
+    const busca = document.getElementById("busca").value.toLowerCase();
+    const ano = document.getElementById("ano").value;
+    const combustivel = document.getElementById("combustivel").value;
+    const cambio = document.getElementById("cambio").value;
 
-  const filtrados = carros.filter(carro => {
-    return (
-      carro.nome.toLowerCase().includes(busca) &&
-      (ano === "" || carro.ano === ano) &&
-      (combustivel === "" || carro.combustivel === combustivel) &&
-      (cambio === "" || carro.cambio === cambio)
-    );
-  });
+    const filtrados = carros.filter(carro => {
+        return (
+            carro.nome.toLowerCase().includes(busca) &&
+            (ano === "" || carro.ano === ano) &&
+            (combustivel === "" || carro.combustivel === combustivel) &&
+            (cambio === "" || carro.cambio === cambio)
+        );
+    });
 
-  mostrarCarros(filtrados);
+    mostrarCarros(filtrados);
 });
-</script>
 
-<script>
 mostrarCarros(carros);
 </script>
 
-
-<body>
-    <div class="container">
-        <div class="filtros">
-            <input id="busca" type="text" placeholder="Digite o carro aqui..."/>
-
-            <select id="ano">
-                <option value="">Todos os anos</option>
-                <option value="2010">2010</option>
-                <option value="2011">2011</option>
-                <option value="2012">2012</option>
-                <option value="2013">2013</option>
-                <option value="2014">2014</option>
-                <option value="2015">2015</option>
-                <option value="2016">2016</option>
-                <option value="2017">2017</option>
-                <option value="2018">2018</option>
-                <option value="2019">2019</option>
-                <option value="2020">2020</option>
-                <option value="2021">2021</option>
-                <option value="2022">2022</option>
-                <option value="2023">2023</option>
-                <option value="2024">2024</option>
-                <option value="2025">2025</option>
-            </select>
-
-            <select id="combustivel">
-                <option value="">Combustivel</option>
-                <option value="gasolina">Gasolina</option>
-                <option value="flex">Flex</option>
-            </select>
-
-            <select id="cambio">
-                <option value="">Câmbio</option>
-                <option value="automatico">Automático</option>
-                <option value="manual">Manual</option>
-            </select>
-
-            <button id="btnBuscar">Pesquisar</button>
-        </div>
-        <div class="lista">
-            <div class="card">
-                <div class="imagem"></div>
-                <div class="info">
-                    <h3>Volkswagen Gol 1.0</h3>
-                </div>   
-            </div>
-        </div>
-
-    </div>
 </body>
 </html>

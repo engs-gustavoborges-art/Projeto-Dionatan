@@ -43,3 +43,18 @@ header {
 .card:hover {
     transform: scale(1.05);
 }
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none; /* remove bolinhas */
+    gap: 30px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    background-color: #e74c3c;
+    padding: 10px 15px;
+    border-radius: 8px;
+}

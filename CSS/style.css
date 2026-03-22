@@ -1,0 +1,101 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Fundo */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+/* Cabeçalho */
+header {
+    background-color: #7d0606;
+    padding: 45px;
+}
+
+/* Logo esquerda */
+.logo {
+    position: absolute;
+    bottom: 420px;
+    left: -10px;
+    width: 455px !important; /* tamanho da logo */
+    height: auto;
+}
+
+/* Menu centralizado */
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 30px;
+}
+
+/* Links */
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    background-color: #e74c3c;
+    padding: 12px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+/* Hover */
+nav ul li a:hover {
+    background-color: #922b21;
+}
+
+/* Banner */
+.banner {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: #ddd;
+}
+
+.banner h2 {
+    font-family: "Inter";
+}
+
+.banner p {
+    font-size: 25px;
+    font-family: "Google Sans";
+}
+
+.card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 250px;
+    box-shadow: 0px 2px 8px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+/* Hover */
+.card:hover {
+    transform: scale(1.05);
+}
+
+/* Espaçamento das seções */
+.noticias, .lancamentos {
+    font-family: "Inter";
+    padding: 30px;
+}
+
+/* Títulos */
+h2 {
+    margin-bottom: 20px;
+    color: #c0392b;
+}
+
+/* Container lado a lado */
+.container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+

@@ -25,27 +25,26 @@
         <div class="filtros">
             <input type="text" placeholder="Digite o carro aqui..."/>
 
-            <select>
-                <option>Todos os anos</option>
+            <select id="ano">
+                <option value="">Todos os anos</option>
+                <option value="2014">2014</option>
+                <option value="2018">2018</option>
+                <option value="2020">2020</option>
             </select>
 
-            <select>
-                <option>Todas as Cilindradas</option>
+            <select id="combustivel">
+                <option value="">Combustivel</option>
+                <option value="gasolina">Gasolina</option>
+                <option value="flex">Flex</option>
             </select>
 
-            <select>
-                <option>Todos os Combustiveis</option>
+            <select id="cambio">
+                <option value="">Câmbio</option>
+                <option value="automatico">Automático</option>
+                <option value="manual">Manual</option>
             </select>
 
-            <select>
-                <option>Todos os Câmbios</option>
-            </select>
-
-            <select>
-                <option>Todas as Direções</option>
-            </select>
-
-            <button>Pesquisar</button>
+            <button value="btnBuscar">Pesquisar</button>
         </div>
         <div class="lista">
             <div class="card">
@@ -57,6 +56,59 @@
         </div>
 
     </div>
-    
 </body>
+            
+<script>
+    const carros = [
+        {nome: "Volkswagen Gol 1.0", ano: "2014", combustivel: "flex", cambio: "manual"},
+        {nome: "Fiat Uno 1.0", ano: "2012", combustivel: "gasolina", cambio: "manual"},
+        {nome: "Chevrolet Corsa Premium 1.4", ano: "2010", combustivel: "flex", cambio: "manual"},
+        {nome: "Volkswagen Jetta GLI 2.0", ano: "2023", combustivel: "gasolina", cambio: "automatico"},
+    ];
+</script>
+
+<script>
+    const lista = document.querySelector(".lista");
+
+    function mostrarCarros(listaCarros){
+        lista.innerHTML = "";
+
+        listaCarros.forEach(carro =>{
+            lista.innerHTML += `
+              <div class = "card">
+                <div class = "imagem"></div>
+                <div class = "info">
+                    <h3>${carro.nome}</h3>
+                    <p>${carro.ano} • ${carro.combustivel} • ${carro.cambio}</p>
+                    </div>
+                </div>
+               `; 
+        });
+    }
+</script>
+
+<script>
+document.getElementById("btnBuscar").addEventListener("click", () => {
+  const busca = document.getElementById("busca").value.toLowerCase();
+  const ano = document.getElementById("ano").value;
+  const combustivel = document.getElementById("combustivel").value;
+  const cambio = document.getElementById("cambio").value;
+
+  const filtrados = carros.filter(carro => {
+    return (
+      carro.nome.toLowerCase().includes(busca) &&
+      (ano === "" || carro.ano === ano) &&
+      (combustivel === "" || carro.combustivel === combustivel) &&
+      (cambio === "" || carro.cambio === cambio)
+    );
+  });
+
+  mostrarCarros(filtrados);
+});
+</script>
+
+<script>
+mostrarCarros(carros);
+</script>
+
 </html>

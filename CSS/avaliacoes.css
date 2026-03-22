@@ -5,9 +5,18 @@
 }
 
 header {
-    background-color: #c0392b;
+    background-color: #7d0606;
     padding: 20px;
     position: relative;
+}
+
+.logo {
+    width: 250px;
+    height: auto;
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 /* Seção geral */
@@ -33,7 +42,7 @@ header {
     margin-bottom: 10px;
     border-radius: 10px;
     width: 250px;
-    box-shadow: 0px 2px 8px rgba(0,0,0,0.1);
+    box-shadow: 0px 2px 8px rgba(186, 5, 5, 0.748);
     display: inline-block;
     margin-right: 10px;
     transition: 0.3s;
@@ -49,12 +58,22 @@ nav ul {
     justify-content: center;
     list-style: none; /* remove bolinhas */
     gap: 30px;
+    text-decoration: none;
+    color: white;
 }
 
 nav ul li a {
     text-decoration: none;
     color: white;
     background-color: #e74c3c;
-    padding: 10px 15px;
-    border-radius: 8px;
+    padding: 12px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: Sans-serif;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #922b21;
 }

@@ -1,0 +1,142 @@
+/* Título */
+.titulo {
+    text-align: center;
+    margin: 0;
+    font-family: 'Poppins';
+    padding: 60px 20px;
+    background-color: #ddd;
+}
+
+body {
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #7d0606;
+    padding: 20px;
+    position: relative;
+}
+
+.logo {
+    width: 250px;
+    height: auto;
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Seção geral */
+.avaliacoes {
+    padding: 20px;
+}
+
+/* Categoria */
+.categoria {
+    margin-bottom: 40px;
+}
+
+/* Título da categoria */
+.categoria h2 {
+    color: #c0392b;
+    margin-bottom: 15px;
+}
+
+/* Cards */
+.card {
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    width: 250px;
+    box-shadow: 0px 2px 8px rgba(186, 5, 5, 0.748);
+    display: inline-block;
+    margin-right: 10px;
+    transition: 0.3s;
+}
+
+/* Hover */
+.card:hover {
+    transform: scale(1.05);
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none; /* remove bolinhas */
+    gap: 30px;
+    text-decoration: none;
+    color: white;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    background-color: #e74c3c;
+    padding: 12px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: Sans-serif;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #922b21;
+    box-shadow: 0px 4px 12px rgba(0,0,0,0.4);
+}
+
+.categoria h2 {
+    font-family: 'Orbitron';
+    transition: 0.3s;
+}
+
+.categoria h2:hover {
+    color: #7d0606;
+    transform: translateX(10px);
+}
+
+@keyframes fadeDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.titulo {
+    animation: fadeDown 1s ease;
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.card {
+    animation: aparecer 0.8s ease;
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+header {
+    animation: slideDown 1s ease;
+}

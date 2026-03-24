@@ -60,6 +60,19 @@
             <option value="manual">Manual</option>
         </select>
 
+        <select id="marca">
+            <option value="">Marca</option>
+            <option value="fiat">Fiat</option>
+            <option value="peugeot">Peugeot</option>
+            <option value="volkswagen">Volkswagen</option>
+            <option value="chevrolet">Chevrolet</option>
+            <option value="jeep">Jeep</option>
+            <option value="toyota">Toyota</option>
+            <option value="bmw">BMW</option>
+            <option value="honda">Honda</option>
+            <option value="nissan">Nissan</option>
+        </select>
+
         <button id="btnBuscar">Pesquisar</button>
     </div>
 
@@ -69,16 +82,16 @@
 <!-- JAVASCRIPT -->
 <script>
 const carros = [
-    {nome: "Volkswagen Gol 1.0", ano: "2014", combustivel: "flex", cambio: "manual"},
-    {nome: "Fiat Uno 1.0", ano: "2012", combustivel: "gasolina", cambio: "manual"},
-    {nome: "Chevrolet Corsa Premium 1.4", ano: "2010", combustivel: "flex", cambio: "manual"},
-    {nome: "Volkswagen Jetta GLI 2.0", ano: "2023", combustivel: "gasolina", cambio: "automatico"},
-    {nome: "Volkswagen Fox 1.6", ano: "2011", combustivel: "flex", cambio: "manual"},
-    {nome: "Volkswagen Polo Sedan 2.0", ano: "2013", combustivel: "flex", cambio: "manual"},  
-    {nome: "Peugeot 408 Griffe 1.6 Turbo", ano: "2015", combustivel: "gasolina", cambio: "automatico"},
-    {nome: "Chevrolet Cruze Hatch LT 1.8", ano: "2016", combustivel: "flex", cambio: "manual"},  
-    {nome: "Jeep Compass 2.0", ano: "2017", combustivel: "flex", cambio: "automatico"},  
-    {nome: "Fiat Siena Sublime 1.6", ano: "2018", combustivel: "flex", cambio: "manual"},  
+    {nome: "Volkswagen Gol 1.0", marca:"volkswagen", ano: "2014", combustivel: "flex", cambio: "manual", img: "https://motorshow.com.br/wp-content/uploads/sites/2/2015/07/img-358968-4-lugar-vw-gol-10-8v.jpg"},
+    {nome: "Fiat Uno 1.0", marca:"fiat", ano: "2012", combustivel: "gasolina", cambio: "manual", img: "https://evoyconsorcios.com.br/images/uploads/gallery/main-comprar-uno-2020-2886460d-8a7d-4684-8285-9b71fc773747-ad00af16d0_1652732084.jpg"},
+    {nome: "Chevrolet Corsa Premium 1.4", marca:"chevrolet", ano: "2010", combustivel: "flex", cambio: "manual", img: "https://s3.ecompletocarros.dev/images/lojas/232/veiculos/27506/veiculoInfoVeiculoImagesMobile/vehicle_image_1591899355_a4a4461f6ce276c1aa1e9027dddd5cc3.jpeg"},
+    {nome: "Volkswagen Jetta GLI 2.0", marca:"volkswagen", ano: "2023", combustivel: "gasolina", cambio: "automatico", img: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjpyvK6kjCsVdJfKobBUJnvW2jwrS8-jL1LG3AdRXtsefbn-XWqrk7QZfJaE67nmWIYwOoZhYmwhboNfzK6AThO8vMEDmofWuHxRYIzCYTBljCJJV49erTfxjU1cP58RMTcpCp5JUn09BqZ/s1600/VW-Jetta-GLi-2020+%252888%2529.JPG"},
+    {nome: "Volkswagen Fox 1.6", marca:"volkswagen", ano: "2011", combustivel: "flex", cambio: "manual", img:"https://img1.icarros.com/dbimg/galeriaimgmodelo/2/135476_1.jpg"},
+    {nome: "Volkswagen Polo Sedan 2.0", marca:"volkswagen", ano: "2013", combustivel: "flex", cambio: "manual", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMMBV_jpjT22ckzVTvVkQcCCEp0CLaJbwp-Q&s"},  
+    {nome: "Peugeot 408 Griffe 1.6 Turbo", marca:"peugeot", ano: "2015", combustivel: "gasolina", cambio: "automatico", img: "https://s3.ecompletocarros.dev/images/lojas/375/veiculos/141855/veiculoInfoVeiculoImagesMobile/vehicle_image_1681811498_d41d8cd98f00b204e9800998ecf8427e.jpeg"},
+    {nome: "Chevrolet Cruze Hatch LT 1.8", marca:"chevrolet", ano: "2016", combustivel: "flex", cambio: "manual", img: "https://garagemdoalan.com.br/wp-content/uploads/imgext/chevrolet-cruze-hatch--lt-1-8--2016--preco--consumo--desempenho-e-ficha-tecnica-foto-2024-03-06-14-43-54-809902932372774-garagem-do-alan-correa.webp"},  
+    {nome: "Jeep Compass 2.0", marca:"jeep", ano: "2017", combustivel: "flex", cambio: "automatico", img: "https://image1.mobiauto.com.br/images/api/images/v1.0/219902712/transform/fl_progressive,f_webp,q_80"},  
+    {nome: "Fiat Siena Sublime 1.6", marca:"fiat", ano: "2018", combustivel: "flex", cambio: "manual", img: "https://img0.icarros.com/dbimg/galeriaimgmodelo/2/106586_1.jpg"},  
 ];
 
 const lista = document.querySelector(".lista");
@@ -89,7 +102,7 @@ function mostrarCarros(listaCarros){
     listaCarros.forEach(carro =>{
         lista.innerHTML += `
         <div class="card">
-            <div class="imagem"></div>
+            <img src="${carro.img}" class="imagem" alt="${carro.nome}">
             <div class="info">
                 <h3>${carro.nome}</h3>
                 <p>${carro.ano} • ${carro.combustivel} • ${carro.cambio}</p>
@@ -104,10 +117,12 @@ document.getElementById("btnBuscar").addEventListener("click", () => {
     const ano = document.getElementById("ano").value;
     const combustivel = document.getElementById("combustivel").value;
     const cambio = document.getElementById("cambio").value;
+    const marca = document.getElementById("marca").value;
 
     const filtrados = carros.filter(carro => {
         return (
             carro.nome.toLowerCase().includes(busca) &&
+            (marca === "" || carro.marca === marca) &&
             (ano === "" || carro.ano === ano) &&
             (combustivel === "" || carro.combustivel === combustivel) &&
             (cambio === "" || carro.cambio === cambio)

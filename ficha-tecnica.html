@@ -101,13 +101,13 @@ function mostrarCarros(listaCarros){
 
     listaCarros.forEach(carro =>{
         lista.innerHTML += `
-        <div class="card">
+        <a href="carro.html?nome=${encodeURIComponent(carro.nome)}&ano=${carro.ano}&img=${carro.img}" class="card">
             <img src="${carro.img}" class="imagem" alt="${carro.nome}">
             <div class="info">
                 <h3>${carro.nome}</h3>
                 <p>${carro.ano} • ${carro.combustivel} • ${carro.cambio}</p>
             </div>
-        </div>
+        </a>
         `;
     });
 }

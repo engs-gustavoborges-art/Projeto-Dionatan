@@ -1,3 +1,9 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
     font-family: Arial;
     background: #f5f5f5;
@@ -6,45 +12,54 @@ body {
 
 /* HEADER */
 header {
-  background-color: #8B0000;
+  background-color: #7d0606;
+  padding: 20px;
   position: relative;
-  display: flex;
-  align-items: center;
-  padding: 0 40px;
-  height: 80px;
 }
 
 nav {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
+  flex: 1;
+  display: flex;
+  justify-content: center;
 }
 
+/* Logo esquerda */
 .logo {
-    width: 200px;
-    position: absolute;
-    left: 20px;
-    top: 50%;
-    transform: translateY(-50%);
+  width: 250px;
+  height: auto;
+  position: absolute;
+  left: 1px;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
+/* Menu centralizado */
 nav ul {
   display: flex;
-  gap: 20px;
-  list-style: none;
+  justify-content: center;
+  list-style: none; 
+  gap: 30px;
+  text-decoration: none;
+  color: white;
 }
 
+/* Links */
 nav ul li a {
   text-decoration: none;
-  background: #ff4d4d;
   color: white;
-  padding: 10px 18px;
-  border-radius: 8px;
+  background-color: #e74c3c;
+  padding: 12px 20px;
+  font-size: 18px;
   font-weight: bold;
+  font-family: Sans-serif;
+  border-radius: 10px;
+  transition: 0.3s;
 }
 
+/* Hover */
 nav ul li a:hover {
-    background-color: #922b21;
+  background-color: #922b21;
+  box-shadow: 0px 4px 12px rgba(0,0,0,0.4);
 }
 
 /* parei aqui */
@@ -92,4 +107,54 @@ td {
     padding: 12px;
     text-align: center;
     border-bottom: 1px solid #ccc;
+}
+
+@keyframes fadeDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.titulo {
+    animation: fadeDown 1s ease;
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.card {
+    animation: aparecer 0.8s ease;
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+header {
+    animation: slideDown 1s ease;
+}
+
+.active {
+  background: white !important;
+  color: #8B0000 !important;
 }

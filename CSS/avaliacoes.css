@@ -63,7 +63,7 @@ header {
 nav ul {
     display: flex;
     justify-content: center;
-    list-style: none; /* remove bolinhas */
+    list-style: none; 
     gap: 30px;
     text-decoration: none;
     color: white;

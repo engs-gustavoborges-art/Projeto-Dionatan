@@ -15,10 +15,6 @@ body.fade-in {
   opacity: 1;
 }
 
-body.fade-out {
-  opacity: 0;
-}
-
 .logo span {
   font-weight: bold;
   margin-left: 10px;

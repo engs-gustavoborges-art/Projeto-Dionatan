@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ficha Tecnica</title>
+    <link rel="stylesheet" href="CSS/ftnc.css">
+</head>
+
+<body>
+
+<header>
+    <a href="ficha-tecnica.html">
+        <img  src="Img/Logo-Principal.png" alt="Logo site" class="logo">
+    </a>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="avaliacoes.html">Avaliações</a></li>
+            <li><a href="ficha-tecnica.html">Ficha tecnica</a></li>
+            <li><a href="curiosidades.html">Curiosidades</a></li>
+        </ul>
+    </nav>
+</header>
+
+<div class="container">
+    <div class="filtros">
+        <input id="busca" type="text" placeholder="Digite o carro aqui..."/>
+
+        <select id="ano">
+            <option value="">Todos os anos</option>
+            <option value="2010">2010</option>
+            <option value="2011">2011</option>
+            <option value="2012">2012</option>
+            <option value="2013">2013</option>
+            <option value="2014">2014</option>
+            <option value="2015">2015</option>
+            <option value="2016">2016</option>
+            <option value="2017">2017</option>
+            <option value="2018">2018</option>
+            <option value="2019">2019</option>
+            <option value="2020">2020</option>
+            <option value="2021">2021</option>
+            <option value="2022">2022</option>
+            <option value="2023">2023</option>
+            <option value="2024">2024</option>
+            <option value="2025">2025</option>
+        </select>
+
+        <select id="combustivel">
+            <option value="">Combustivel</option>
+            <option value="gasolina">Gasolina</option>
+            <option value="flex">Flex</option>
+        </select>
+
+        <select id="cambio">
+            <option value="">Câmbio</option>
+            <option value="automatico">Automático</option>
+            <option value="manual">Manual</option>
+        </select>
+
+        <select id="marca">
+            <option value="">Marca</option>
+            <option value="fiat">Fiat</option>
+            <option value="peugeot">Peugeot</option>
+            <option value="volkswagen">Volkswagen</option>
+            <option value="chevrolet">Chevrolet</option>
+            <option value="jeep">Jeep</option>
+            <option value="toyota">Toyota</option>
+            <option value="bmw">BMW</option>
+            <option value="honda">Honda</option>
+            <option value="nissan">Nissan</option>
+        </select>
+
+        <button id="btnBuscar">Pesquisar</button>
+    </div>
+
+    <div class="lista"></div>
+</div>
+
+<!-- JAVASCRIPT -->
+<script>
+const carros = [
+    {nome: "Volkswagen Gol 1.0", marca:"volkswagen", ano: "2014", combustivel: "flex", cambio: "manual", img: "https://motorshow.com.br/wp-content/uploads/sites/2/2015/07/img-358968-4-lugar-vw-gol-10-8v.jpg"},
+    {nome: "Fiat Uno 1.0", marca:"fiat", ano: "2012", combustivel: "gasolina", cambio: "manual", img: "https://evoyconsorcios.com.br/images/uploads/gallery/main-comprar-uno-2020-2886460d-8a7d-4684-8285-9b71fc773747-ad00af16d0_1652732084.jpg"},
+    {nome: "Chevrolet Corsa Premium 1.4", marca:"chevrolet", ano: "2010", combustivel: "flex", cambio: "manual", img: "https://s3.ecompletocarros.dev/images/lojas/232/veiculos/27506/veiculoInfoVeiculoImagesMobile/vehicle_image_1591899355_a4a4461f6ce276c1aa1e9027dddd5cc3.jpeg"},
+    {nome: "Volkswagen Jetta GLI 2.0", marca:"volkswagen", ano: "2023", combustivel: "gasolina", cambio: "automatico", img: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjpyvK6kjCsVdJfKobBUJnvW2jwrS8-jL1LG3AdRXtsefbn-XWqrk7QZfJaE67nmWIYwOoZhYmwhboNfzK6AThO8vMEDmofWuHxRYIzCYTBljCJJV49erTfxjU1cP58RMTcpCp5JUn09BqZ/s1600/VW-Jetta-GLi-2020+%252888%2529.JPG"},
+    {nome: "Volkswagen Fox 1.6", marca:"volkswagen", ano: "2011", combustivel: "flex", cambio: "manual", img:"https://img1.icarros.com/dbimg/galeriaimgmodelo/2/135476_1.jpg"},
+    {nome: "Volkswagen Polo Sedan 2.0", marca:"volkswagen", ano: "2013", combustivel: "flex", cambio: "manual", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMMBV_jpjT22ckzVTvVkQcCCEp0CLaJbwp-Q&s"},  
+    {nome: "Peugeot 408 Griffe 1.6 Turbo", marca:"peugeot", ano: "2015", combustivel: "gasolina", cambio: "automatico", img: "https://s3.ecompletocarros.dev/images/lojas/375/veiculos/141855/veiculoInfoVeiculoImagesMobile/vehicle_image_1681811498_d41d8cd98f00b204e9800998ecf8427e.jpeg"},
+    {nome: "Chevrolet Cruze Hatch LT 1.8", marca:"chevrolet", ano: "2016", combustivel: "flex", cambio: "manual", img: "https://garagemdoalan.com.br/wp-content/uploads/imgext/chevrolet-cruze-hatch--lt-1-8--2016--preco--consumo--desempenho-e-ficha-tecnica-foto-2024-03-06-14-43-54-809902932372774-garagem-do-alan-correa.webp"},  
+    {nome: "Jeep Compass 2.0", marca:"jeep", ano: "2017", combustivel: "flex", cambio: "automatico", img: "https://image1.mobiauto.com.br/images/api/images/v1.0/219902712/transform/fl_progressive,f_webp,q_80"},  
+    {nome: "Fiat Siena Sublime 1.6", marca:"fiat", ano: "2018", combustivel: "flex", cambio: "manual", img: "https://img0.icarros.com/dbimg/galeriaimgmodelo/2/106586_1.jpg"},  
+];
+
+const lista = document.querySelector(".lista");
+
+function mostrarCarros(listaCarros){
+    lista.innerHTML = "";
+
+    listaCarros.forEach(carro =>{
+        lista.innerHTML += `
+        <a href="carro.html?nome=${encodeURIComponent(carro.nome)}&ano=${carro.ano}&img=${carro.img}" class="card">
+            <img src="${carro.img}" class="imagem" alt="${carro.nome}">
+            <div class="info">
+                <h3>${carro.nome}</h3>
+                <p>${carro.ano} • ${carro.combustivel} • ${carro.cambio}</p>
+            </div>
+        </a>
+        `;
+    });
+}
+
+document.getElementById("btnBuscar").addEventListener("click", () => {
+    const busca = document.getElementById("busca").value.toLowerCase();
+    const ano = document.getElementById("ano").value;
+    const combustivel = document.getElementById("combustivel").value;
+    const cambio = document.getElementById("cambio").value;
+    const marca = document.getElementById("marca").value;
+
+    const filtrados = carros.filter(carro => {
+        return (
+            carro.nome.toLowerCase().includes(busca) &&
+            (marca === "" || carro.marca === marca) &&
+            (ano === "" || carro.ano === ano) &&
+            (combustivel === "" || carro.combustivel === combustivel) &&
+            (cambio === "" || carro.cambio === cambio)
+        );
+    });
+
+    mostrarCarros(filtrados);
+});
+
+mostrarCarros(carros);
+</script>
+
+<script>
+  window.addEventListener("load", () => {
+    document.body.classList.add("fade-in");
+  });
+</script>
+
+</body>
+</html>

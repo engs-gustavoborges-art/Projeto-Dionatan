@@ -57,6 +57,8 @@ body{
 
 .card {
   display: flex;
+  text-decoration: none;
+  color: inherit;
   gap: 15px;
   align-items: center;
   background: white;

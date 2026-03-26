@@ -51,7 +51,6 @@ nav ul li a:hover {
     color: #8B0000;
     transform: translateY(-3px);
 }
-
 .active {
     background: white !important;
     color: #8B0000 !important;

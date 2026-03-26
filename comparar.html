@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Comparar Carros</title>
+
+<link rel="stylesheet" href="CSS/comparar.css">
+</head>
+
+<body>
+
+<header>
+    <img src="img/logo_site_carro-removebg-preview.png" class="logo">
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="avaliações.html">Avaliações</a></li>
+            <li><a href="ficha-tecnica.html">Ficha tecnica</a></li>
+            <li><a href="curiosidades.html">Curiosidades</a></li>
+            <li><a href="comparar.html">Comparar</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="banner">
+    <h2>🚗 Comparação de Carros</h2>
+</section>
+
+<div class="container">
+
+    <div class="select-area">
+        <select id="carro1">
+            <option value="">Carro 1</option>
+            <option value="ferrari">Ferrari SF90</option>
+            <option value="lambo">Lamborghini Aventador</option>
+            <option value="onix">Onix</option>
+            <option value="civic">Honda Civic</option>
+            <option value="corolla">Toyota Corolla</option>
+            <option value="bmw">BMW M3</option>
+        </select>
+
+        <select id="carro2">
+            <option value="">Carro 2</option>
+            <option value="ferrari">Ferrari SF90</option>
+            <option value="lambo">Lamborghini Aventador</option>
+            <option value="onix">Onix</option>
+            <option value="civic">Honda Civic</option>
+            <option value="corolla">Toyota Corolla</option>
+            <option value="bmw">BMW M3</option>
+        </select>
+
+        <button onclick="comparar()">Comparar</button>
+    </div>
+
+    <table id="tabela">
+        <tr>
+            <th>Especificação</th>
+            <th id="nome1"></th>
+            <th id="nome2"></th>
+        </tr>
+
+        <tr>
+            <td>Velocidade Máx</td>
+            <td id="v1"></td>
+            <td id="v2"></td>
+        </tr>
+
+        <tr>
+            <td>0-100 km/h</td>
+            <td id="a1"></td>
+            <td id="a2"></td>
+        </tr>
+
+        <tr>
+            <td>Preço</td>
+            <td id="p1"></td>
+            <td id="p2"></td>
+        </tr>
+    </table>
+
+</div>
+
+<script src="js/comparar.js"></script>
+
+</body>
+</html>

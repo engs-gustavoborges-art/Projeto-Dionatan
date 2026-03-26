@@ -1,28 +1,33 @@
+/* ===================== */
+/* Reset básico */
+/* ===================== */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-/* Título */
-.titulo {
-    text-align: center;
     margin: 0;
-    font-family: 'Poppins';
-    padding: 60px 20px;
-    background-color: #ddd;
+    padding: 0;
+    box-sizing: border-box;
 }
 
+/* ===================== */
+/* Corpo da página */
+/* ===================== */
 body {
     background-color: #f4f4f4;
 }
 
+/* ===================== */
+/* Header */
+/* ===================== */
 header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: #7d0606;
     padding: 20px;
     position: relative;
+    animation: slideDown 1s ease;
 }
 
+/* Logo */
 .logo {
     width: 250px;
     height: auto;
@@ -32,7 +37,52 @@ header {
     transform: translateY(-50%);
 }
 
-/* Seção geral */
+/* ===================== */
+/* Navegação */
+/* ===================== */
+
+
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 30px;
+}
+
+/* Links do menu */
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    background-color: #e74c3c;
+    padding: 12px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: sans-serif;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+/* Hover dos links */
+nav ul li a:hover {
+    background-color: #922b21;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* ===================== */
+/* Título principal */
+/* ===================== */
+.titulo {
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    padding: 60px 20px;
+    background-color: #ddd;
+    animation: fadeDown 1s ease;
+}
+
+/* ===================== */
+/* Seção de avaliações */
+/* ===================== */
 .avaliacoes {
     padding: 20px;
 }
@@ -44,64 +94,52 @@ header {
 
 /* Título da categoria */
 .categoria h2 {
+    font-family: 'Orbitron', sans-serif;
     color: #c0392b;
     margin-bottom: 15px;
-}
-
-/* Cards */
-.card {
-    background-color: white;
-    padding: 20px;
-    margin-bottom: 10px;
-    border-radius: 10px;
-    width: 250px;
-    box-shadow: 0px 2px 8px rgba(186, 5, 5, 0.748);
-    display: inline-block;
-    margin-right: 10px;
     transition: 0.3s;
 }
 
-/* Hover */
-.card:hover {
-    transform: scale(1.05);
-}
-
-nav ul {
-    display: flex;
-    justify-content: center;
-    list-style: none; 
-    gap: 30px;
-    text-decoration: none;
-    color: white;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: white;
-    background-color: #e74c3c;
-    padding: 12px 20px;
-    font-size: 18px;
-    font-weight: bold;
-    font-family: Sans-serif;
-    border-radius: 10px;
-    transition: 0.3s;
-}
-
-nav ul li a:hover {
-    background-color: #922b21;
-    box-shadow: 0px 4px 12px rgba(0,0,0,0.4);
-}
-
-.categoria h2 {
-    font-family: 'Orbitron';
-    transition: 0.3s;
-}
-
+/* Hover no título */
 .categoria h2:hover {
     color: #7d0606;
     transform: translateX(10px);
 }
 
+/* ===================== */
+/* Cards */
+/* ===================== */
+.card {
+    display: inline-block;
+    width: 250px;
+    padding: 20px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 2px 8px rgba(186, 5, 5, 0.748);
+
+    transition: 0.3s;
+    animation: aparecer 0.8s ease;
+}
+
+/* Hover dos cards */
+.card:hover {
+    transform: scale(1.05);
+}
+
+/* ===================== */
+/* Estado ativo */
+/* ===================== */
+.active {
+    background: white !important;
+    color: #8B0000 !important;
+}
+
+/* ===================== */
+/* Animações */
+/* ===================== */
 @keyframes fadeDown {
     from {
         opacity: 0;
@@ -111,10 +149,6 @@ nav ul li a:hover {
         opacity: 1;
         transform: translateY(0);
     }
-}
-
-.titulo {
-    animation: fadeDown 1s ease;
 }
 
 @keyframes aparecer {
@@ -128,10 +162,6 @@ nav ul li a:hover {
     }
 }
 
-.card {
-    animation: aparecer 0.8s ease;
-}
-
 @keyframes slideDown {
     from {
         transform: translateY(-100%);
@@ -143,11 +173,69 @@ nav ul li a:hover {
     }
 }
 
-header {
-    animation: slideDown 1s ease;
+@media (max-width: 900px) {
+    /* Ajuste do Header para telas médias */
+    header {
+        flex-direction: column; /* Empilha logo e menu */
+        padding: 60px 20px 20px 20px; /* Dá espaço para a logo no topo */
+    }
+
+    .logo {
+        position: relative; /* Sai do modo "por cima de tudo" */
+        left: auto;
+        top: auto;
+        transform: none;
+        margin-bottom: 20px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 180px; /* Diminui a logo no celular */
+    }
+
+    .login-btn{
+        bottom: 80%;
+    }
+
+    nav ul {
+        gap: 20px; /* Diminui espaço entre botões */
+        flex-wrap: wrap; /* Permite que os botões quebrem linha */
+    }
+
+    nav ul li a {
+        padding: 8px 15px;
+        font-size: 14px;
+    }
 }
 
-.active {
-  background: white !important;
-  color: #8B0000 !important;
+@media (max-width: 600px) {
+    /* Filtros e Cards em celulares pequenos */
+    .filtros {
+        padding: 10px;
+        justify-content: center;
+    }
+
+    .filtros input, 
+    .filtros select, 
+    .filtros button {
+        width: 100%; /* Ocupa a largura toda no celular */
+    }
+
+    .lista {
+        padding: 0 15px;
+    }
+
+    .card {
+        flex-direction: column; /* Imagem em cima, texto embaixo */
+        align-items: flex-start;
+        text-align: center;
+    }
+
+    .imagem {
+        width: 100%; /* Imagem ocupa o card todo */
+        height: 150px;
+    }
+
+    .info {
+        width: 100%;
+    }
 }

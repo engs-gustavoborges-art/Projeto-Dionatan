@@ -9,9 +9,9 @@ body {
 }
 
 header {
-  background-color: #7d0606;
-  padding: 20px;
-  position: relative;
+    background-color: #7d0606;
+    padding: 20px;
+    position: relative;
 }
 
 nav {
@@ -19,7 +19,6 @@ nav {
   display: flex;
   justify-content: center;
 }
-
 /* Logo esquerda */
 .logo {
   width: 250px;
@@ -189,4 +188,71 @@ footer {
 
 header {
     animation: slideDown 1s ease;
+}
+
+@media (max-width: 900px) {
+    /* Ajuste do Header para telas médias */
+    header {
+        flex-direction: column; /* Empilha logo e menu */
+        padding: 60px 20px 20px 20px; /* Dá espaço para a logo no topo */
+    }
+
+    .logo {
+        position: relative; /* Sai do modo "por cima de tudo" */
+        left: auto;
+        top: auto;
+        transform: none;
+        margin-bottom: 20px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 180px; /* Diminui a logo no celular */
+    }
+
+    .login-btn{
+        bottom: 80%;
+    }
+
+    nav ul {
+        gap: 20px; /* Diminui espaço entre botões */
+        flex-wrap: wrap; /* Permite que os botões quebrem linha */
+    }
+
+    nav ul li a {
+        padding: 8px 15px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 600px) {
+    /* Filtros e Cards em celulares pequenos */
+    .filtros {
+        padding: 10px;
+        justify-content: center;
+    }
+
+    .filtros input, 
+    .filtros select, 
+    .filtros button {
+        width: 100%; /* Ocupa a largura toda no celular */
+    }
+
+    .lista {
+        padding: 0 15px;
+    }
+
+    .card {
+        flex-direction: column; /* Imagem em cima, texto embaixo */
+        align-items: flex-start;
+        text-align: center;
+    }
+
+    .imagem {
+        width: 100%; /* Imagem ocupa o card todo */
+        height: 150px;
+    }
+
+    .info {
+        width: 100%;
+    }
 }

@@ -1,28 +1,70 @@
+/* Reset básico */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Fundo */
+/* ===================== */
+/* Fundo geral da página */
+/* ===================== */
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
 }
 
+/* ===================== */
+/* Header */
+/* ===================== */
 header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: #7d0606;
     padding: 20px;
     position: relative;
+    animation: slideDown 0.8s ease;
 }
 
+/* ===================== */
+/* Navegação */
+/* ===================== */
 nav {
-  flex: 1;
-  display: flex;
-  justify-content: center;
+    flex: 1;
+    display: flex;
+    justify-content: center;
 }
 
-/* Logo esquerda */
+/* Menu */
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 30px;
+}
+
+/* Links do menu */
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    background-color: #e74c3c;
+    padding: 12px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: sans-serif;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+/* Hover dos links */
+nav ul li a:hover {
+    background-color: #922b21;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* ===================== */
+/* Logo */
+/* ===================== */
 .logo {
     width: 250px;
     height: auto;
@@ -32,40 +74,14 @@ nav {
     transform: translateY(-50%);
 }
 
-/* Menu centralizado */
-nav ul {
-    display: flex;
-    justify-content: center;
-    list-style: none; 
-    gap: 30px;
-    text-decoration: none;
-    color: white;
-}
-
-/* Links */
-nav ul li a {
-    text-decoration: none;
-    color: white;
-    background-color: #e74c3c;
-    padding: 12px 20px;
-    font-size: 18px;
-    font-weight: bold;
-    font-family: Sans-serif;
-    border-radius: 10px;
-    transition: 0.3s;
-}
-
-/* Hover */
-nav ul li a:hover {
-    background-color: #922b21;
-    box-shadow: 0px 4px 12px rgba(0,0,0,0.4);
-}
-
+/* ===================== */
+/* Botão Login */
+/* ===================== */
 .login-btn {
     position: absolute;
     right: 40px;
     bottom: 10px;
-    text-decoration: none;  
+    text-decoration: none;
     background: #ff4d4d;
     color: white;
     padding: 10px 18px;
@@ -74,13 +90,15 @@ nav ul li a:hover {
     transition: 0.3s;
 }
 
-/* Hover igual */
+/* Hover do botão */
 .login-btn:hover {
     background-color: #922b21;
     transform: scale(1.05);
 }
 
+/* ===================== */
 /* Banner */
+/* ===================== */
 .banner {
     text-align: center;
     padding: 60px 20px;
@@ -88,34 +106,53 @@ nav ul li a:hover {
 }
 
 .banner h2 {
-    font-family: "Inter";
+    font-family: "Inter", sans-serif;
 }
 
 .banner p {
     font-size: 25px;
-    font-family: "Google Sans";
+    font-family: "Google Sans", sans-serif;
 }
 
+/* ===================== */
+/* Cards */
+/* ===================== */
 .card {
     background-color: white;
     padding: 20px;
     border-radius: 10px;
     width: 250px;
-    box-shadow: 0px 2px 8px rgba(0,0,0,0.1);
-    transition: 0.3s;
-    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+    
+    /* Animação */
+    opacity: 0;
+    animation: aparecer 0.8s ease forwards;
+
+    /* Transição */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Hover */
+/* Hover dos cards */
 .card:hover {
-    transform: scale(1.05);
-    transform: translateY(-10px);
-    box-shadow: 0px 8px 20px rgba(0,0,0,0.3);
+    transform: scale(1.05) translateY(-10px);
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
 }
 
-/* Espaçamento das seções */
-.noticias, .lancamentos {
-    font-family: "Inter";
+/* Delay de animação */
+.card:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.card:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+/* ===================== */
+/* Seções */
+/* ===================== */
+.noticias,
+.lancamentos {
+    font-family: "Inter", sans-serif;
     padding: 30px;
 }
 
@@ -125,13 +162,24 @@ h2 {
     color: #c0392b;
 }
 
-/* Container lado a lado */
+/* Container flexível */
 .container {
     display: flex;
     gap: 20px;
     flex-wrap: wrap;
 }
 
+/* ===================== */
+/* Estado ativo */
+/* ===================== */
+.active {
+    background: white !important;
+    color: #8B0000 !important;
+}
+
+/* ===================== */
+/* Animações */
+/* ===================== */
 @keyframes slideDown {
     from {
         transform: translateY(-100%);
@@ -142,11 +190,6 @@ h2 {
         opacity: 1;
     }
 }
-
-header {
-    animation: slideDown 0.8s ease;
-}
-
 
 @keyframes aparecer {
     from {
@@ -159,54 +202,76 @@ header {
     }
 }
 
-.card {
-    opacity: 0;
-    animation: aparecer 0.8s ease forwards;
-}
+/* ===================== */
+/* Responsividade */
+/* ===================== */
+/* ===================== */
+/* Responsividade */
+/* ===================== */
 
-/* Delay pra ficar profissional */
-.card:nth-child(1) {
-    animation-delay: 0.2s;
-}
-
-.card:nth-child(2) {
-    animation-delay: 0.4s;
-}
-
-.active {
-  background: white !important;
-  color: #8B0000 !important;
-}
-@media (max-width: 768px) {
-
+@media (max-width: 900px) {
+    /* Ajuste do Header para telas médias */
     header {
-        flex-direction: column;
-        gap: 20px;
-        text-align: center;
-    }
-
-    nav ul {
-        flex-direction: column;
-        gap: 20px;
+        flex-direction: column; /* Empilha logo e menu */
+        padding: 60px 20px 20px 20px; /* Dá espaço para a logo no topo */
     }
 
     .logo {
-        width: 100px;
+        position: relative; /* Sai do modo "por cima de tudo" */
+        left: auto;
+        top: auto;
+        transform: none;
+        margin-bottom: 20px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 180px; /* Diminui a logo no celular */
     }
 
-    .login-btn {
-        left: 70%;
-        width: 100%;
-        max-width: 200px;
-        text-align: center;
+    .login-btn{
+        bottom: 80%;
     }
 
-    .container {
+    nav ul {
+        gap: 20px; /* Diminui espaço entre botões */
+        flex-wrap: wrap; /* Permite que os botões quebrem linha */
+    }
+
+    nav ul li a {
+        padding: 8px 15px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 600px) {
+    /* Filtros e Cards em celulares pequenos */
+    .filtros {
+        padding: 10px;
         justify-content: center;
     }
 
+    .filtros input, 
+    .filtros select, 
+    .filtros button {
+        width: 100%; /* Ocupa a largura toda no celular */
+    }
+
+    .lista {
+        padding: 0 15px;
+    }
+
     .card {
-        width: 100%; 
-        max-width: 350px;
+        flex-direction: column; /* Imagem em cima, texto embaixo */
+        align-items: flex-start;
+        text-align: center;
+    }
+
+    .imagem {
+        width: 100%; /* Imagem ocupa o card todo */
+        height: 150px;
+    }
+
+    .info {
+        width: 100%;
     }
 }

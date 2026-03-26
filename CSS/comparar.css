@@ -46,3 +46,50 @@ nav ul li a {
 nav ul li a:hover {
     background-color: #922b21;
 }
+
+/* parei aqui */
+.banner {
+    background-color: #ddd;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    padding: 25px 0;
+    font-size: 25px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    margin-top: 30px;
+}
+
+.select-area {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+select, button {
+    padding: 10px;
+}
+
+/* TABELA */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    margin-top: 20px;
+}
+
+th {
+    background: #ddd;
+    padding: 12px;
+}
+
+td {
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+}

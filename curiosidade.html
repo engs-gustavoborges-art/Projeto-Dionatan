@@ -3,48 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fórum de Carros</title>
-    <link rel="stylesheet" href="CSS/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Inter:ital,opsz@0,14..32;1,14..32&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Carattere&family=Carlito:ital,wght@0,400;0,700;1,400;1,700&family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Inter:ital,opsz@0,14..32;1,14..32&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-</head> 
+    <title>Curiosidades - Mundo dos Carros</title>
+
+    <!-- Fonte -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/CSS/curiosidades.css">
+</head>
 
 <body>
 
+<!-- HEADER -->
 <header>
-    <img src="Img/logo_site_carro-removebg-preview.png" alt="Logo site" class="logo">
+    <img src="Img/logo_site_carro-removebg-preview.png" class="logo">
 
     <nav>
         <ul>
             <li><a href="index.html">Início</a></li>
-            <li><a href="/avaliações.html">Avaliações</a></li>
-            <li><a href="#">Ficha tecnica</a></li>
-            <li><a href="#">Curiosidades</a></li>
+            <li><a href="avaliações.html">Avaliações</a></li>
+            <li><a href="ficha-tecnica.html">Ficha técnica</a></li>
+            <li><a href="curiosidade.html" class="active">Curiosidades</a></li>
         </ul>
     </nav>
-
-     <main>
-        <h2>Curiosidades Recentes</h2>
-
-        <div class="cards">
-            <div class="card">
-                <h3>Primeiro carro da história</h3>
-                <p>O primeiro automóvel foi criado em 1886 por Karl Benz.</p>
-            </div>
-
-            <div class="card">
-                <h3>Carro mais rápido</h3>
-                <p>O Bugatti Chiron pode ultrapassar os 400 km/h 🔥</p>
-            </div>
-
-            <div class="card">
-                <h3>Carros elétricos</h3>
-                <p>Existem desde o século XIX, antes dos carros a gasolina.</p>
-            </div>
-        </div>
-    
 </header>
+
+<!-- HERO -->
+<section class="hero">
+    <h1>Curiosidades Automotivas</h1>
+    <p>Fatos interessantes sobre o mundo dos carros 🚗</p>
+</section>
+
+<!-- CONTEÚDO -->
+<main class="container">
+
+    <h2>Curiosidades Recentes</h2>
+
+    <div class="cards">
+        <div class="card">
+            <h3>🚘 Primeiro carro</h3>
+            <p>O primeiro automóvel foi criado em 1886 por Karl Benz.</p>
+        </div>
+
+        <div class="card">
+            <h3>🔥 Mais rápido</h3>
+            <p>O Bugatti Chiron ultrapassa 400 km/h.</p>
+        </div>
+
+        <div class="card">
+            <h3>⚡ Elétricos antigos</h3>
+            <p>Carros elétricos existem antes dos modelos a gasolina.</p>
+        </div>
+    </div>
+
+    <h2>Fatos Interessantes</h2>
+
+    <div class="cards">
+        <div class="card">
+            <h3>🕹️ Direção antiga</h3>
+            <p>Carros eram controlados com alavancas.</p>
+        </div>
+
+        <div class="card">
+            <h3>🏆 Mais vendido</h3>
+            <p>O Toyota Corolla é o carro mais vendido do mundo.</p>
+        </div>
+
+        <div class="card">
+            <h3>🚓 Segurança</h3>
+            <p>Cintos de segurança salvaram milhões de vidas.</p>
+        </div>
+    </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+    <p>© 2026 Mundo dos Carros</p>
+</footer>
+
+</body>
+</html>

@@ -106,7 +106,6 @@ h2 {
     position: relative;
     overflow: hidden;
 }
-
 /* EFEITO TOP */
 .card::before {
     content: "";

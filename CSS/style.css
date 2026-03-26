@@ -177,3 +177,36 @@ header {
   background: white !important;
   color: #8B0000 !important;
 }
+@media (max-width: 768px) {
+
+    header {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .logo {
+        width: 100px;
+    }
+
+    .login-btn {
+        left: 70%;
+        width: 100%;
+        max-width: 200px;
+        text-align: center;
+    }
+
+    .container {
+        justify-content: center;
+    }
+
+    .card {
+        width: 100%; 
+        max-width: 350px;
+    }
+}

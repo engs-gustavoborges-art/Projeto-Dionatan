@@ -27,7 +27,7 @@ header {
 /* MENU */
 nav {
     position: absolute;
-    left: 50%;
+    left: 51%;
     top: 50%;
     transform: translate(-50%, -50%);
 }

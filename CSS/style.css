@@ -28,7 +28,11 @@ nav {
 
 /* Logo esquerda */
 .logo {
+<<<<<<< HEAD
      width: 250px;
+=======
+    width: 250px;
+>>>>>>> Kaua-TelaAvaliações
     height: auto;
     position: absolute;
     left: 20px;
@@ -102,11 +106,14 @@ nav ul li a:hover {
     width: 250px;
     box-shadow: 0px 2px 8px rgba(0,0,0,0.1);
     transition: 0.3s;
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
 /* Hover */
 .card:hover {
     transform: scale(1.05);
+    transform: translateY(-10px);
+    box-shadow: 0px 8px 20px rgba(0,0,0,0.3);
 }
 
 /* Espaçamento das seções */
@@ -128,3 +135,43 @@ h2 {
     flex-wrap: wrap;
 }
 
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+header {
+    animation: slideDown 0.8s ease;
+}
+
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.card {
+    opacity: 0;
+    animation: aparecer 0.8s ease forwards;
+}
+
+/* Delay pra ficar profissional */
+.card:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.card:nth-child(2) {
+    animation-delay: 0.4s;
+}

@@ -28,10 +28,12 @@ nav {
 
 /* Logo esquerda */
 .logo {
-    max-height: 240px;
-    height: 300px; /* tamanho da logo */
-    width: auto;
-    object-fit: contain;
+     width: 250px;
+    height: auto;
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 /* Menu centralizado */

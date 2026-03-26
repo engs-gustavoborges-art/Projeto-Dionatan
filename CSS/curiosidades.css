@@ -42,7 +42,8 @@ nav ul li a {
   font-weight: bold;
 }
 
-/* Hover */
 nav ul li a:hover {
     background-color: #922b21;
+
+
 }

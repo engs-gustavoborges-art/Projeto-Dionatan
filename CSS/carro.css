@@ -6,17 +6,17 @@
 }
 
 body {
+  opacity: 0;
+  transition: opacity 0.4s ease;
   background: #f2f2f2;
 }
 
-/* HEADER */
-header {
-  background: #b30000;
-  color: white;
-  display: flex;
-  justify-content: space-between;
-  padding: 15px 40px;
-  align-items: center;
+body.fade-in {
+  opacity: 1;
+}
+
+body.fade-out {
+  opacity: 0;
 }
 
 .logo span {
@@ -24,17 +24,71 @@ header {
   margin-left: 10px;
 }
 
-nav a {
-  margin: 0 10px;
-  text-decoration: none;
-  color: white;
-  background: #ff4d4d;
-  padding: 8px 15px;
-  border-radius: 10px;
+/* HEADER IGUAL AO FICHA-TECNICA */
+header {
+  background-color: #8B0000;
+  position: relative;
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px;
 }
 
-nav a.active {
+.logo {
+  height: 200px;
+  width: auto;
+}
+
+/* menu centralizado */
+nav {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+nav ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+nav ul li a {
+  background: #ff4d4d;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+/* HOVER ANIMADO */
+nav ul li a:hover {
   background: #ff1a1a;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* CLICK */
+nav ul li a:active {
+  transform: scale(0.95);
+}
+
+/* LINHA ANIMADA */
+nav ul li a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 3px;
+  bottom: -5px;
+  left: 0;
+  background: white;
+  transition: width 0.3s ease;
+}
+
+nav ul li a:hover::after {
+  width: 100%;
 }
 
 /* CONTAINER */

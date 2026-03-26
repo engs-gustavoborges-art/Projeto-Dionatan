@@ -24,7 +24,6 @@ header {
     transform: translateY(-50%);
 }
 
-/* MENU */
 nav {
     position: absolute;
     left: 51%;
@@ -58,7 +57,6 @@ nav ul li a:hover {
     color: #8B0000 !important;
 }
 
-/* HERO */
 .hero {
     text-align: center;
     padding: 60px 21px;

@@ -1,241 +1,213 @@
-/* ===================== */
-/* Reset básico */
-/* ===================== */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* ===================== */
-/* Corpo da página */
-/* ===================== */
 body {
-    background-color: #f4f4f4;
+  background-color: #f4f4f4;
 }
 
-/* ===================== */
-/* Header */
-/* ===================== */
 header {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #7d0606;
-    padding: 20px;
-    position: relative;
-    animation: slideDown 1s ease;
+  background-color: #7d0606;
+  padding: 0 40px; 
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px; 
+  overflow: visible; 
+  animation: slideDown 1s ease;
 }
 
-/* Logo */
 .logo {
-    width: 250px;
-    height: auto;
-    position: absolute;
-    left: 20px;
-    top: 50%;
-    transform: translateY(-50%);
+  width: 250px; 
+  height: auto;
+  margin-top: 5px;
+  flex-shrink: 0; 
 }
 
-/* ===================== */
-/* Navegação */
-/* ===================== */
+/* MENU */
 
-
+nav {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  margin-right: 200px; 
+}
 
 nav ul {
-    display: flex;
-    justify-content: center;
-    list-style: none;
-    gap: 30px;
+  display: flex;
+  list-style: none;
+  gap: 15px; 
 }
 
-/* Links do menu */
 nav ul li a {
-    text-decoration: none;
-    color: white;
-    background-color: #e74c3c;
-    padding: 12px 20px;
-    font-size: 18px;
-    font-weight: bold;
-    font-family: sans-serif;
-    border-radius: 10px;
-    transition: 0.3s;
+  text-decoration: none;
+  color: white;
+  background-color: #e74c3c;
+  padding: 10px 16px;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: sans-serif;
+  border-radius: 10px;
+  transition: 0.3s;
 }
 
-/* Hover dos links */
 nav ul li a:hover {
-    background-color: #922b21;
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.4);
+  background-color: #922b21;
+  box-shadow: 0px 4px 12px rgba(0,0,0,0.4);
 }
 
-/* ===================== */
-/* Título principal */
-/* ===================== */
-.titulo {
-    text-align: center;
-    font-family: 'Poppins', sans-serif;
-    padding: 60px 20px;
-    background-color: #ddd;
-    animation: fadeDown 1s ease;
-}
-
-/* ===================== */
-/* Seção de avaliações */
-/* ===================== */
-.avaliacoes {
-    padding: 20px;
-}
-
-/* Categoria */
-.categoria {
-    margin-bottom: 40px;
-}
-
-/* Título da categoria */
-.categoria h2 {
-    font-family: 'Orbitron', sans-serif;
-    color: #c0392b;
-    margin-bottom: 15px;
-    transition: 0.3s;
-}
-
-/* Hover no título */
-.categoria h2:hover {
-    color: #7d0606;
-    transform: translateX(10px);
-}
-
-/* ===================== */
-/* Cards */
-/* ===================== */
-.card {
-    display: inline-block;
-    width: 250px;
-    padding: 20px;
-    margin-bottom: 10px;
-    margin-right: 10px;
-
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0px 2px 8px rgba(186, 5, 5, 0.748);
-
-    transition: 0.3s;
-    animation: aparecer 0.8s ease;
-}
-
-/* Hover dos cards */
-.card:hover {
-    transform: scale(1.05);
-}
-
-/* ===================== */
-/* Estado ativo */
-/* ===================== */
 .active {
-    background: white !important;
-    color: #8B0000 !important;
+  background: white !important;
+  color: #8B0000 !important;
 }
 
-/* ===================== */
-/* Animações */
-/* ===================== */
+/* TITULO */
+.titulo {
+  text-align: center;
+  font-family: 'Poppins';
+  padding: 50px 20px;
+  background-color: #ddd;
+}
+
+/* SEÇÃO */
+.avaliacoes {
+  padding: 20px;
+}
+
+/* CATEGORIA */
+.categoria {
+  margin-bottom: 40px;
+}
+
+.categoria h2 {
+  color: #c0392b;
+  margin-bottom: 15px;
+  font-family: 'Orbitron';
+  transition: 0.3s;
+}
+
+.categoria h2:hover {
+  color: #7d0606;
+  transform: translateX(10px);
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.card {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  flex: 1 1 250px; 
+  max-width: 300px;
+  box-shadow: 0px 2px 8px rgba(186, 5, 5, 0.748);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+/* ANIMAÇÕES */
 @keyframes fadeDown {
-    from {
-        opacity: 0;
-        transform: translateY(-30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.titulo {
+  animation: fadeDown 1s ease;
 }
 
 @keyframes aparecer {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card {
+  animation: aparecer 0.8s ease;
 }
 
 @keyframes slideDown {
-    from {
-        transform: translateY(-100%);
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
-@media (max-width: 900px) {
-    /* Ajuste do Header para telas médias */
-    header {
-        flex-direction: column; /* Empilha logo e menu */
-        padding: 60px 20px 20px 20px; /* Dá espaço para a logo no topo */
-    }
-
-    .logo {
-        position: relative; /* Sai do modo "por cima de tudo" */
-        left: auto;
-        top: auto;
-        transform: none;
-        margin-bottom: 20px;
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        width: 180px; /* Diminui a logo no celular */
-    }
-
-    .login-btn{
-        bottom: 80%;
-    }
-
-    nav ul {
-        gap: 20px; /* Diminui espaço entre botões */
-        flex-wrap: wrap; /* Permite que os botões quebrem linha */
-    }
-
-    nav ul li a {
-        padding: 8px 15px;
-        font-size: 14px;
-    }
+header {
+  animation: slideDown 1s ease;
 }
 
-@media (max-width: 600px) {
-    /* Filtros e Cards em celulares pequenos */
-    .filtros {
-        padding: 10px;
-        justify-content: center;
-    }
 
-    .filtros input, 
-    .filtros select, 
-    .filtros button {
-        width: 100%; /* Ocupa a largura toda no celular */
-    }
+@media (max-width: 768px) {
 
-    .lista {
-        padding: 0 15px;
-    }
+  header {
+    flex-direction: column;
+    gap: 15px;
+  }
 
-    .card {
-        flex-direction: column; /* Imagem em cima, texto embaixo */
-        align-items: flex-start;
-        text-align: center;
-    }
+  .logo {
+    width: 160px;
+  }
 
-    .imagem {
-        width: 100%; /* Imagem ocupa o card todo */
-        height: 150px;
-    }
+  nav ul {
+    gap: 10px;
+  }
 
-    .info {
-        width: 100%;
-    }
+  nav ul li a {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+
+  .titulo {
+    font-size: 22px;
+    padding: 40px 15px;
+  }
+
+}
+
+
+@media (max-width: 1024px) {
+  nav {
+    margin-right: 0; 
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    padding: 15px;
+    height: auto; 
+  }
+
+  nav {
+    margin-right: 0;
+  }
+
+  nav ul {
+    padding: 10px 0;
+    justify-content: center;
+    flex-wrap: wrap; 
+  }
 }
